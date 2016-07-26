@@ -1,5 +1,4 @@
 ---
-layout: nil
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -13,7 +12,7 @@ layout: nil
   {% for post in site.posts limit:20 %}
   <entry>
     <title>{{ post.title }}</title>
-    <link href="{{ site.baseurl }}{{ post.url }}?utm_source=RSS&amp;utm_medium=RSS&amp;utm_campaign={{ post.title | replace: ',','' | replace: ' ', '' | xml_escape }}"/>
+    <link href="{{ site.baseurl }}{{ post.url }}?utm_source=RSS&amp;utm_medium=RSS&amp;utm_campaign={{ post.id }}"/>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <id>{{ site.baseurl }}{{ post.id }}</id>
     <content type="html">{{ post.content | xml_escape }}</content>
