@@ -1,0 +1,90 @@
+// CUSTOM ================================================
+.PageNavigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+
+  margin: 4rem 0 0 0;
+  border-top: #ebf2f6 1px solid;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+  text-decoration: underline;
+  color: #4a4a4a;
+}
+.PageNavigation a:visited {
+  color: #4a4a4a;
+}
+.PageNavigation a:hover {
+  color: #57a3e8;
+}
+.PageNavigation .next {
+  text-align: right;
+}
+
+.site-logo {
+  img {
+    @include media($large) {
+      width: 160px;
+      height: 160px;
+      @include rounded(160px); /* crops in a circle */
+    }
+  }
+}
+
+.entry-feature-image {
+	@include media($medium) {
+		margin-top: -35px; /* move up to be overlapped by site logo */
+	}
+	@include media($large) {
+		margin-top: -105px; /* move up further to be overlapped by site logo */
+	}
+}
+
+.entry-title {
+	@include media($medium) {
+		@include font-size(46,yes,48);
+	}
+	@include media($large) {
+		@include font-size(54,yes,58);
+	}
+}
+
+li {
+	pre {
+		code {
+			white-space: pre;
+			border: none;
+			background-color: initial;
+		}
+	}
+}
+
+.post-list .excerpt {
+  padding: 4px 0;
+}
+
+.right {
+  text-align: right;
+}
+
+/* Hide footnotes */
+.footnotes {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 7px 10px;
+}
+th {
+  background-color: #f0f0f0;
+}

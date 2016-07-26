@@ -1,0 +1,81 @@
+# Site wide configuration
+
+title: 좋은 JavaScript 코드 작성을 위한 블로그
+locale: en_US
+description: JavaScript 프로그래밍 노하우, 다양한 오류 사례를 공유합니다.
+logo: blog-logo.png
+search: true
+url: http://cimfalab.github.io/deepscan
+repository: cimfalab/deepscan
+
+# Jekyll configuration
+
+permalink:   /:year/:month/:title
+markdown:    kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  #style: compressed
+gems:
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-paginate
+
+kramdown:
+  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..2
+  enable_coderay: false
+
+mathjax: true
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
+
+paginate: 5
+paginate_path: /blog/page:num/
+
+# Disqus Comments
+comments: true
+
+# Site owner
+owner:
+  name: Kim Kangho
+  avatar: bio-photo-3.jpg
+  email: cimfalab@gmail.com
+  disqus-shortname: deepscan
+  twitter: #username
+  facebook: #username
+  github: #username
+  stackexchange: #http://stackoverflow.com/users/123456/username
+  linkedin: #username
+  instagram: #username
+  flickr: #username
+  tumblr: #username
+  pinterest: #username
+  weibo: #userid
+  google:
+    plus: #username
+    analytics: UA-80667138-1
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+
+# archives 생성
+jekyll-archives:
+  enabled:
+    - categories
+    - year
+    - month
+    - day
+    - tags
+  layouts:
+    year: archive-year
+    month: archive-month
+    category: archive-tag
+    tag: archive-tag
