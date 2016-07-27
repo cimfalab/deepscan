@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Blog
-excerpt: "An archive of blog posts sorted by date."
+excerpt: "JavaScript 프로그래밍 노하우와 다양한 코딩 오류 사례 모음"
 search_omit: true
 ---
 

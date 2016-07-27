@@ -1,10 +1,8 @@
 ---
 layout: page
 title: Articles
-excerpt: "An archive of articles sorted by date."
+excerpt: "JavaScript 관련 유용한 글 모음"
 ---
-
-추후 업데이트 예정입니다.
 
 <ul class="post-list">
 {% for post in site.categories.articles %} 
