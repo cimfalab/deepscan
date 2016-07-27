@@ -2,6 +2,13 @@
 layout: page
 title: 소개
 excerpt: "To help you write better JavaScript codes by static analysis technology"
+tags:
+  - 자바스크립트
+  - JavaScript
+  - 정적 분석
+  - Static Analysis
+  - 코드 오류 사례
+  - Code Quality
 image:
   feature: background.png
   credit:
