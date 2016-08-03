@@ -1,0 +1,278 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>ECMAScript 6 소개 &#8211; 좋은 JavaScript 코드 작성을 위한 블로그</title>
+<meta name="description" content="새롭게 확정된 JavaScript 명세인 ECMAScript 6의 새로운 기능들을 소개합니다.">
+<meta name="keywords" content="JavaScript, ECMAScript 6, ES6">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="ECMAScript 6 소개">
+<meta name="twitter:description" content="새롭게 확정된 JavaScript 명세인 ECMAScript 6의 새로운 기능들을 소개합니다.">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cimfalab.github.io/deepscan/images/blog-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECMAScript 6 소개">
+<meta property="og:description" content="새롭게 확정된 JavaScript 명세인 ECMAScript 6의 새로운 기능들을 소개합니다.">
+<meta property="og:url" content="https://cimfalab.github.io/deepscan/2016/07/ecmascript-6">
+<meta property="og:site_name" content="좋은 JavaScript 코드 작성을 위한 블로그">
+
+
+
+
+
+<link rel="canonical" href="https://cimfalab.github.io/deepscan/2016/07/ecmascript-6">
+<link href="/deepscan/atom.xml" type="application/atom+xml" rel="alternate" title="좋은 JavaScript 코드 작성을 위한 블로그 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/deepscan/assets/css/main.css">
+<link rel="stylesheet" href="/deepscan/assets/css/prism.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="/deepscan/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="/deepscan/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/deepscan/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/deepscan/favicon.ico?v=2">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/deepscan/favicon.png?v=2">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/deepscan/images/apple-touch-icon-114x114-precomposed.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/about/" >About</a></li>
+		  
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/articles/" >Articles</a></li>
+		  
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/blog/" >Blog</a></li>
+		  
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/archive/" >Archives</a></li>
+		  
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/tags/" >Tags</a></li>
+		  
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/search/" >Search</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="/deepscan/tags/#JavaScript" title="Pages tagged JavaScript">JavaScript</a></li><li><a href="/deepscan/tags/#ECMAScript 6" title="Pages tagged ECMAScript 6">ECMAScript 6</a></li><li><a href="/deepscan/tags/#ES6" title="Pages tagged ES6">ES6</a></li>
+        </ul>
+        
+          <h1 class="entry-title">ECMAScript 6 소개</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="/deepscan/images/bio-wcho.jpg" class="bio-photo" alt="Cho Wooyoung bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Cho Wooyoung</span></span>
+        <span class="entry-date date published"><time datetime="2016-07-28T13:00:00+09:00"><i class="fa fa-calendar-o"></i> July 28, 2016</time></span>
+        
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=JavaScript,ECMAScript6,ES6&amp;text=ECMAScript%206%20소개&amp;url=https://cimfalab.github.io/deepscan/2016/07/ecmascript-6" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://cimfalab.github.io/deepscan/2016/07/ecmascript-6" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=https://cimfalab.github.io/deepscan/2016/07/ecmascript-6" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <blockquote class="preface">
+  <p>해당 글은 동료 개발자 우영님이 기여해 주었습니다.</p>
+
+  <p>저는 아래 자료에서 소개된 기능들 중 클래스 정의, <code class="highlighter-rouge">super</code> 키워드로 부모 클래스의 함수 호출, <code class="highlighter-rouge">let</code> 키워드로 변수 정의가 우선 와 닿더군요. 특히 블럭 범위 변수를 정의하는 <code class="highlighter-rouge">let</code>은 <a href="/deepscan/2016/07/variable-misuse">JavaScript에서 변수 사용 시 주의할 점</a> 포스팅에서 다뤘던 함수 범위 변수에 대한 대안이 되겠습니다.</p>
+</blockquote>
+
+<p>현재 사용하는 대부분의 JavaScript는 2009년에 처음 제정되어 2011년에 개정된 <a href="http://www.ecma-international.org/ecma-262/5.1/">ECMAScript 5.1</a> 표준에 기반하고 있습니다.</p>
+
+<p>이후 클래스 기반 상속, 데이터 바인딩(<code class="highlighter-rouge">Object.observe</code>), Promise 등 다양한 요구사항들이 도출되었고 그 결과 2015년 6월에 대대적으로 업데이트된 <a href="http://www.ecma-international.org/ecma-262/6.0/">ECMAScript 6 </a>가 발표되었고, 매년 표준을 업데이트하는 정책에 따라 올해 6월에 <a href="http://www.ecma-international.org/ecma-262/7.0/">ECMAScript 7 </a>까지 발표되었습니다.</p>
+
+<p>ECMAScript 6가 제정된지도 일년이 지났고 Internet Explorer를 제외한 <a href="http://kangax.github.io/compat-table/es6/">대부분의 브라우저가 표준을 지원하는 상황</a>에서 웹 개발자들이 이제는 ECMAScript 6에 대해 관심을 가질 필요가 있다고 생각합니다.</p>
+
+<p>그래서 제가 팀 내부에 발표했던 ECMAScript 6 소개 자료를 공유합니다.
+새로운 기능들에 대해 코드와 함께 정리되어 있어 ECMAScript 6 이해에 도움이 될 것이라고 생각합니다.</p>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/d6HOlv2E0FNHNX" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/WooyoungCho/ecmascript-6-64456124" title="ECMAScript 6의 새로운 것들!" target="_blank">ECMAScript 6의 새로운 것들!</a> </strong> from <strong><a href="//www.slideshare.net/WooyoungCho" target="_blank">WooYoung Cho</a></strong> </div>
+
+<h2 id="references">References</h2>
+
+<p>위 발표 자료에 언급된 주요 참고 자료입니다.</p>
+
+<ul>
+  <li><a href="http://hacks.mozilla.or.kr/category/es6-in-depth/">ES6 In Depth</a> (Mozilla 블로그에 게재된 시리즈로 재미있고 각 기능에 대한 깊이 있는 설명을 담고 있어 발표에서 많이 참조)</li>
+  <li><a href="http://es6-features.org">ECMAScript 6 — New Features: Overview &amp; Comparison</a> (ECMAScript 5와의 코드 비교를 통해 기능별 설명)</li>
+  <li><a href="http://git.io/es6features">Overview of ECMAScript 6 features</a> (ECMAScript 6 전체에 대한 개괄적인 소개)</li>
+  <li><a href="http://exploringjs.com/">Exploring ES6</a> (ES6 전체에 대한 상세하고 친절한 설명을 담은 무료 e-book)</li>
+</ul>
+
+<p>ECMAScript 6 기반 개발 환경에 대해서는 다음을 참고하세요.</p>
+
+<ul>
+  <li><a href="http://readme.skplanet.com/?p=12185">ES6 기반 프론트엔드 개발 환경 알아보기</a></li>
+  <li><a href="http://huns.me/development/1913">ES2015 단위 테스트 환경 구축하기</a></li>
+</ul>
+
+        
+        <nav class="PageNavigation">
+          
+            <a class="prev" href="/2016/07/variable-misuse">&laquo; JavaScript에서 변수 사용 시 주의할 점</a>
+          
+            <a class="next" href="/2016/07/unused-codes-1">사용되지 않는 코드 (1) &raquo;</a>
+          
+        </nav><!-- /.pagination -->
+        
+          <div id="disqus_thread"></div><!-- /#disqus_thread -->
+          
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'deepscan'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2016 Kim Kangho. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  
+	
+  <a href="https://cimfalab.github.io/deepscan/atom.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = '/deepscan';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/deepscan/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/deepscan/assets/js/scripts.min.js"></script>
+
+<script type="text/javascript" src="/deepscan/assets/js/vendor/bigfoot.min.js"></script>
+<script type="text/javascript" src="/deepscan/assets/js/vendor/prism.js"></script>
+<script type="text/javascript">
+  var bigfoot = $.bigfoot(
+    {
+      actionOriginalFN: "ignore",
+      positionContent: "true"
+    }
+  );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ 'https://www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-80667138-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+</body>
+</html>

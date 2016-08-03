@@ -1,0 +1,316 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>typeof 연산자의 잘못된 사용 &#8211; 좋은 JavaScript 코드 작성을 위한 블로그</title>
+<meta name="description" content="JavaScript에서 typeof 연산자의 잘못된 사용례를 알아봅니다.">
+<meta name="keywords" content="JavaScript, typeof">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="typeof 연산자의 잘못된 사용">
+<meta name="twitter:description" content="JavaScript에서 typeof 연산자의 잘못된 사용례를 알아봅니다.">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cimfalab.github.io/deepscan/images/blog-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="typeof 연산자의 잘못된 사용">
+<meta property="og:description" content="JavaScript에서 typeof 연산자의 잘못된 사용례를 알아봅니다.">
+<meta property="og:url" content="https://cimfalab.github.io/deepscan/2016/07/typeof">
+<meta property="og:site_name" content="좋은 JavaScript 코드 작성을 위한 블로그">
+
+
+
+
+
+<link rel="canonical" href="https://cimfalab.github.io/deepscan/2016/07/typeof">
+<link href="/deepscan/atom.xml" type="application/atom+xml" rel="alternate" title="좋은 JavaScript 코드 작성을 위한 블로그 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/deepscan/assets/css/main.css">
+<link rel="stylesheet" href="/deepscan/assets/css/prism.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="/deepscan/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="/deepscan/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/deepscan/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/deepscan/favicon.ico?v=2">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/deepscan/favicon.png?v=2">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/deepscan/images/apple-touch-icon-114x114-precomposed.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/about/" >About</a></li>
+		  
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/articles/" >Articles</a></li>
+		  
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/blog/" >Blog</a></li>
+		  
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/archive/" >Archives</a></li>
+		  
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/tags/" >Tags</a></li>
+		  
+		    
+		    <li><a href="https://cimfalab.github.io/deepscan/search/" >Search</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="/deepscan/tags/#JavaScript" title="Pages tagged JavaScript">JavaScript</a></li><li><a href="/deepscan/tags/#typeof" title="Pages tagged typeof">typeof</a></li>
+        </ul>
+        
+          <h1 class="entry-title">typeof 연산자의 잘못된 사용</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="/deepscan/images/bio-photo-3.jpg" class="bio-photo" alt="Kim Kangho bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Kim Kangho</span></span>
+        <span class="entry-date date published"><time datetime="2016-07-26T18:00:00+09:00"><i class="fa fa-calendar-o"></i> July 26, 2016</time></span>
+        <span class="entry-date date modified"><time datetime="2016-07-27 14:00:00 +0900"><i class="fa fa-pencil"></i> July 27, 2016</time></span>
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=JavaScript,typeof&amp;text=typeof%20연산자의%20잘못된%20사용&amp;url=https://cimfalab.github.io/deepscan/2016/07/typeof" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://cimfalab.github.io/deepscan/2016/07/typeof" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=https://cimfalab.github.io/deepscan/2016/07/typeof" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">잘못된 배열 타입 체크</a></li>
+  <li><a href="#undefined--" id="markdown-toc-undefined--">잘못된 undefined 타입 체크</a></li>
+  <li><a href="#wrap-up" id="markdown-toc-wrap-up">Wrap-Up</a></li>
+</ul>
+
+<p>첫 번째 공유할 사례는 JavaScript typeof 연산자의 잘못된 사용입니다.</p>
+
+<p>객체 타입에 따른 코딩을 위해 typeof 연산자를 많이 사용하는데, 이 타입 비교가 잘못된 경우입니다.</p>
+
+<h2 id="section">잘못된 배열 타입 체크</h2>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">param</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">pChangeMessageList</span> <span class="o">==</span> <span class="s2">"Array"</span> <span class="p">?</span> <span class="nx">pChangeMessageList</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">'|'</span><span class="p">)</span> <span class="p">:</span> <span class="nx">pChangeMessageList</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>객체가 배열인지 판단하기 위한 코드로서 “Array” 혹은 “array”로 비교하는 경우가 종종 발견됩니다.</p>
+
+<p>하지만 typeof의 반환 값에는 “Array” 혹은 “array”가 없습니다. (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">MDN</a>을 참고하세요.)</p>
+
+<p>따라서 객체가 배열인지 체크를 위해서는 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray">Array.isArray()</a> 혹은  jQuery, underscore 등의 라이브러리에서 제공하는 배열 체크 함수를 사용해야 합니다.</p>
+
+<h2 id="undefined--">잘못된 undefined 타입 체크</h2>
+
+<pre class=" language-javascript  line-numbers " data-start="788" data-line="4"><code>updateZkConfigs: function (configs) {
+  var zks = this.getZkServerHosts();
+  var portValue = configs['zoo.cfg'] &amp;&amp; Em.get(configs['zoo.cfg'], 'clientPort');
+  var zkPort = typeof portValue === 'udefined' ? '2181' : portValue;
+  var zksWithPort = this.concatZkNames(zks, zkPort);
+  this.setZKConfigs(configs, zksWithPort, zks);
+},</code></pre>
+<p class="right">– Source: Apache Ambari 2.2.2 <code class="highlighter-rouge">/app/controllers/main/host/details.js</code></p>
+
+<p>‘undefined’의 오타로서 기본값 ‘2181’이 사용되지 않습니다.
+개발자의 의도는 <code class="highlighter-rouge">portValue</code>가 설정되어 있지 않을 경우 기본 포트 2181을 사용하려는 것이나 의도대로 동작하지 않습니다.</p>
+
+<p>오타를 수정하거나 다음과 같이 수정해야 합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">zkPort</span> <span class="o">=</span> <span class="o">!</span><span class="nx">portValue</span> <span class="p">?</span> <span class="s1">'2181'</span> <span class="p">:</span> <span class="nx">portValue</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>아래는 “undefined”를 사용해야 하는데 “undeifned”로 잘못 사용하는 경우입니다.</p>
+
+<pre class=" language-javascript  line-numbers " data-start="5291" data-line="5"><code>jindo.$H.prototype.length = function() {
+	var i = 0;
+	for(var k in this._table) {
+		if(this._table.hasOwnProperty(k)){
+			if (typeof Object.prototype[k] != "undeifned" &amp;&amp; Object.prototype[k] === this._table[k]) continue;</code></pre>
+<p class="right">– Source: Naver Jindo 1.5.3 <code class="highlighter-rouge">jindo.all.js</code></p>
+
+<h2 id="wrap-up">Wrap-Up</h2>
+
+<p>이상 typeof의 잘못된 사용례를 보았습니다.
+typeof의 반환 값은 다음과 같이 7개로 한정되어 있으니 타입 비교 시 주의하세요.</p>
+
+<ul>
+  <li>“undefined”</li>
+  <li>“object”</li>
+  <li>“boolean”</li>
+  <li>“number”</li>
+  <li>“string”</li>
+  <li>“function”</li>
+  <li>“symbol” (<a href="https://hacks.mozilla.org/2015/06/es6-in-depth-symbols/">new in ECMAScript 2015</a>)</li>
+</ul>
+
+<!--
+<ul class="post-list">
+ 
+  <li><article><a href="https://cimfalab.github.io/deepscan/2016/08/unused-codes-2">사용되지 않는 코드 (2) <span class="entry-date"><time datetime="2016-08-01T22:00:00+09:00">August 01, 2016</time></span> <span class="excerpt">JavaScript에서의 중복 조건, 사용되지 않는 표현식 등 사용되지 않는 코드의 사례에 대해 알아봅니다.</span></a></article></li>
+
+</ul>
+-->
+
+        
+        <nav class="PageNavigation">
+          
+            <a class="prev" href=""></a>
+          
+            <a class="next" href="/2016/07/event-in-firefox">Firefox에서 이벤트 객체 제대로 사용하기 &raquo;</a>
+          
+        </nav><!-- /.pagination -->
+        
+          <div id="disqus_thread"></div><!-- /#disqus_thread -->
+          
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'deepscan'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2016 Kim Kangho. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  
+	
+  <a href="https://cimfalab.github.io/deepscan/atom.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = '/deepscan';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/deepscan/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/deepscan/assets/js/scripts.min.js"></script>
+
+<script type="text/javascript" src="/deepscan/assets/js/vendor/bigfoot.min.js"></script>
+<script type="text/javascript" src="/deepscan/assets/js/vendor/prism.js"></script>
+<script type="text/javascript">
+  var bigfoot = $.bigfoot(
+    {
+      actionOriginalFN: "ignore",
+      positionContent: "true"
+    }
+  );
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ 'https://www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-80667138-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+</body>
+</html>

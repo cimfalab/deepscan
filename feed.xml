@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>좋은 JavaScript 코드 작성을 위한 블로그</title>
-  <subtitle>JavaScript 프로그래밍 노하우, 다양한 오류 사례를 공유합니다.</subtitle>
-  <link type="application/atom+xml" href="/deepscan/atom.xml" rel="self"/>
-  <link type="text/html" href="https://cimfalab.github.io/deepscan/" rel="alternate"/>
-  <updated>2016-08-03T19:22:48+09:00</updated>
-  <id>https://cimfalab.github.io/deepscan/</id>
-
-  
-  <entry>
-    <title>사용되지 않는 코드 (2)</title>
-    <link href="/deepscan/2016/08/unused-codes-2?utm_source=RSS&amp;utm_medium=RSS&amp;utm_campaign=/2016/08/unused-codes-2"/>
-    <updated>2016-08-01T22:00:00+09:00</updated>
-    <id>/deepscan/2016/08/unused-codes-2</id>
-    <content type="html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="https://cimfalab.github.io/deepscan/deepscan/feed.xml" rel="self" type="application/atom+xml" /><link href="https://cimfalab.github.io/deepscan/deepscan/" rel="alternate" type="text/html" /><updated>2016-08-03T19:22:48+09:00</updated><id>https://cimfalab.github.io/deepscan/deepscan/</id><title>좋은 JavaScript 코드 작성을 위한 블로그</title><subtitle>JavaScript 프로그래밍 노하우, 다양한 오류 사례를 공유합니다.</subtitle><entry><title>사용되지 않는 코드 (2)</title><link href="https://cimfalab.github.io/deepscan/deepscan/2016/08/unused-codes-2" rel="alternate" type="text/html" title="사용되지 않는 코드 (2)" /><published>2016-08-01T22:00:00+09:00</published><updated>2016-08-01T22:00:00+09:00</updated><id>https://cimfalab.github.io/deepscan/deepscan/2016/08/unused-codes-2</id><content type="html" xml:base="https://cimfalab.github.io/deepscan/deepscan/2016/08/unused-codes-2">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;중복 조건&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;동일 결과 조건&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-5&quot; id=&quot;markdown-toc-section-5&quot;&gt;도달 불가능한 코드&lt;/a&gt;&lt;/li&gt;
@@ -230,16 +215,7 @@
       &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;#section-6&quot;&gt;사용되지 않는 표현식&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>사용되지 않는 코드 (1)</title>
-    <link href="/deepscan/2016/07/unused-codes-1?utm_source=RSS&amp;utm_medium=RSS&amp;utm_campaign=/2016/07/unused-codes-1"/>
-    <updated>2016-07-29T13:30:00+09:00</updated>
-    <id>/deepscan/2016/07/unused-codes-1</id>
-    <content type="html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+&lt;/table&gt;</content><category term="JavaScript" /><category term="중복 조건" /><category term="동일 결과 조건" /><category term="사용되지 않는 표현식" /><category term="사용되지 않는 코드" /><summary>JavaScript에서의 중복 조건, 사용되지 않는 표현식 등 사용되지 않는 코드의 사례에 대해 알아봅니다.</summary></entry><entry><title>사용되지 않는 코드 (1)</title><link href="https://cimfalab.github.io/deepscan/deepscan/2016/07/unused-codes-1" rel="alternate" type="text/html" title="사용되지 않는 코드 (1)" /><published>2016-07-29T13:30:00+09:00</published><updated>2016-07-29T13:30:00+09:00</updated><id>https://cimfalab.github.io/deepscan/deepscan/2016/07/unused-codes-1</id><content type="html" xml:base="https://cimfalab.github.io/deepscan/deepscan/2016/07/unused-codes-1">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;함수 중복 정의&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;객체 속성 중복 정의&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;불필요한 인자 전달&lt;/a&gt;&lt;/li&gt;
@@ -331,16 +307,7 @@
   &lt;li&gt;불필요한 인자 전달&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;다음 포스팅에서는 중복 조건, 사용되지 않는 표현식 등 추가적인 패턴에 대해 알아보도록 하겠습니다.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>ECMAScript 6 소개</title>
-    <link href="/deepscan/2016/07/ecmascript-6?utm_source=RSS&amp;utm_medium=RSS&amp;utm_campaign=/2016/07/ecmascript-6"/>
-    <updated>2016-07-28T13:00:00+09:00</updated>
-    <id>/deepscan/2016/07/ecmascript-6</id>
-    <content type="html">&lt;blockquote class=&quot;preface&quot;&gt;
+&lt;p&gt;다음 포스팅에서는 중복 조건, 사용되지 않는 표현식 등 추가적인 패턴에 대해 알아보도록 하겠습니다.&lt;/p&gt;</content><category term="JavaScript" /><category term="중복 함수" /><category term="중복 속성" /><category term="불필요한 인자" /><category term="사용되지 않는 코드" /><category term="unused codes" /><summary>JavaScript에서의 중복 속성 정의, 불필요한 인자 전달 등 사용되지 않는 코드에 대해 알아봅니다.</summary></entry><entry><title>ECMAScript 6 소개</title><link href="https://cimfalab.github.io/deepscan/deepscan/2016/07/ecmascript-6" rel="alternate" type="text/html" title="ECMAScript 6 소개" /><published>2016-07-28T13:00:00+09:00</published><updated>2016-07-28T13:00:00+09:00</updated><id>https://cimfalab.github.io/deepscan/deepscan/2016/07/ecmascript-6</id><content type="html" xml:base="https://cimfalab.github.io/deepscan/deepscan/2016/07/ecmascript-6">&lt;blockquote class=&quot;preface&quot;&gt;
   &lt;p&gt;해당 글은 동료 개발자 우영님이 기여해 주었습니다.&lt;/p&gt;
 
   &lt;p&gt;저는 아래 자료에서 소개된 기능들 중 클래스 정의, &lt;code class=&quot;highlighter-rouge&quot;&gt;super&lt;/code&gt; 키워드로 부모 클래스의 함수 호출, &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; 키워드로 변수 정의가 우선 와 닿더군요. 특히 블럭 범위 변수를 정의하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;은 &lt;a href=&quot;/deepscan/2016/07/variable-misuse&quot;&gt;JavaScript에서 변수 사용 시 주의할 점&lt;/a&gt; 포스팅에서 다뤘던 함수 범위 변수에 대한 대안이 되겠습니다.&lt;/p&gt;
@@ -374,16 +341,7 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://readme.skplanet.com/?p=12185&quot;&gt;ES6 기반 프론트엔드 개발 환경 알아보기&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://huns.me/development/1913&quot;&gt;ES2015 단위 테스트 환경 구축하기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>JavaScript에서 변수 사용 시 주의할 점</title>
-    <link href="/deepscan/2016/07/variable-misuse?utm_source=RSS&amp;utm_medium=RSS&amp;utm_campaign=/2016/07/variable-misuse"/>
-    <updated>2016-07-28T11:30:00+09:00</updated>
-    <id>/deepscan/2016/07/variable-misuse</id>
-    <content type="html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+&lt;/ul&gt;</content><author><name>wcho</name></author><category term="JavaScript" /><category term="ECMAScript 6" /><category term="ES6" /><summary>새롭게 확정된 JavaScript 명세인 ECMAScript 6의 새로운 기능들을 소개합니다.</summary></entry><entry><title>JavaScript에서 변수 사용 시 주의할 점</title><link href="https://cimfalab.github.io/deepscan/deepscan/2016/07/variable-misuse" rel="alternate" type="text/html" title="JavaScript에서 변수 사용 시 주의할 점" /><published>2016-07-28T11:30:00+09:00</published><updated>2016-07-28T11:30:00+09:00</updated><id>https://cimfalab.github.io/deepscan/deepscan/2016/07/variable-misuse</id><content type="html" xml:base="https://cimfalab.github.io/deepscan/deepscan/2016/07/variable-misuse">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;변수 선언 전 사용&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;변수 중복 선언&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;변수 재정의&lt;/a&gt;&lt;/li&gt;
@@ -483,16 +441,7 @@
 &lt;ul&gt;
   &lt;li&gt;변수 선언은 함수 최상위에 한번만 한다.&lt;/li&gt;
   &lt;li&gt;해당 변수 정의가 누락되는 일 없이 사용되도록 한다.&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Firefox에서 이벤트 객체 제대로 사용하기</title>
-    <link href="/deepscan/2016/07/event-in-firefox?utm_source=RSS&amp;utm_medium=RSS&amp;utm_campaign=/2016/07/event-in-firefox"/>
-    <updated>2016-07-27T10:25:00+09:00</updated>
-    <id>/deepscan/2016/07/event-in-firefox</id>
-    <content type="html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+&lt;/ul&gt;</content><category term="JavaScript" /><category term="변수" /><category term="variable" /><category term="호이스팅" /><category term="hoisting" /><summary>JavaScript에서 변수 사용 시 중복 선언, 재정의, 선언 전 사용 등의 주의할 점을 알아봅니다.</summary></entry><entry><title>Firefox에서 이벤트 객체 제대로 사용하기</title><link href="https://cimfalab.github.io/deepscan/deepscan/2016/07/event-in-firefox" rel="alternate" type="text/html" title="Firefox에서 이벤트 객체 제대로 사용하기" /><published>2016-07-27T10:25:00+09:00</published><updated>2016-07-27T10:25:00+09:00</updated><id>https://cimfalab.github.io/deepscan/deepscan/2016/07/event-in-firefox</id><content type="html" xml:base="https://cimfalab.github.io/deepscan/deepscan/2016/07/event-in-firefox">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#event--&quot; id=&quot;markdown-toc-event--&quot;&gt;글로벌 event 객체 사용&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#eventsrcelement--&quot; id=&quot;markdown-toc-eventsrcelement--&quot;&gt;Event.srcElement 속성 사용&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#eventreturnvalue--&quot; id=&quot;markdown-toc-eventreturnvalue--&quot;&gt;Event.returnValue 속성 사용&lt;/a&gt;&lt;/li&gt;
@@ -649,16 +598,7 @@ Event propagation을 막아야 하는 이유는 &lt;code class=&quot;highlighter
 &lt;ul&gt;
   &lt;li&gt;Firefox에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;window.event&lt;/code&gt; 객체가 존재하지 않으므로 이벤트 핸들러에 전달된 이벤트 객체를 사용해야 한다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Event.srcElement&lt;/code&gt; 대신 &lt;code class=&quot;highlighter-rouge&quot;&gt;Event.target&lt;/code&gt;을 통해 이벤트가 발생한 엘리먼트를 얻어야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>typeof 연산자의 잘못된 사용</title>
-    <link href="/deepscan/2016/07/typeof?utm_source=RSS&amp;utm_medium=RSS&amp;utm_campaign=/2016/07/typeof"/>
-    <updated>2016-07-26T18:00:00+09:00</updated>
-    <id>/deepscan/2016/07/typeof</id>
-    <content type="html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+&lt;/ul&gt;</content><category term="JavaScript" /><category term="Firefox" /><category term="이벤트" /><category term="Event" /><category term="브라우저 호환성" /><category term="browser compatibility" /><summary>[브라우저 호환성] Firefox에서 흔히 잘못 사용하는 이벤트 객체의 사례를 공유하고, 제대로 사용하는 방법을 알아봅니다.</summary></entry><entry><title>typeof 연산자의 잘못된 사용</title><link href="https://cimfalab.github.io/deepscan/deepscan/2016/07/typeof" rel="alternate" type="text/html" title="typeof 연산자의 잘못된 사용" /><published>2016-07-26T18:00:00+09:00</published><updated>2016-07-26T18:00:00+09:00</updated><id>https://cimfalab.github.io/deepscan/deepscan/2016/07/typeof</id><content type="html" xml:base="https://cimfalab.github.io/deepscan/deepscan/2016/07/typeof">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;잘못된 배열 타입 체크&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#undefined--&quot; id=&quot;markdown-toc-undefined--&quot;&gt;잘못된 undefined 타입 체크&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#wrap-up&quot; id=&quot;markdown-toc-wrap-up&quot;&gt;Wrap-Up&lt;/a&gt;&lt;/li&gt;
@@ -730,8 +670,4 @@ typeof의 반환 값은 다음과 같이 7개로 한정되어 있으니 타입 �
   &lt;li&gt;&lt;article&gt;&lt;a href=&quot;https://cimfalab.github.io/deepscan/2016/08/unused-codes-2&quot;&gt;사용되지 않는 코드 (2) &lt;span class=&quot;entry-date&quot;&gt;&lt;time datetime=&quot;2016-08-01T22:00:00+09:00&quot;&gt;August 01, 2016&lt;/time&gt;&lt;/span&gt; &lt;span class=&quot;excerpt&quot;&gt;JavaScript에서의 중복 조건, 사용되지 않는 표현식 등 사용되지 않는 코드의 사례에 대해 알아봅니다.&lt;/span&gt;&lt;/a&gt;&lt;/article&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
---&gt;
-</content>
-  </entry>
-  
-</feed>
+--&gt;</content><category term="JavaScript" /><category term="typeof" /><summary>JavaScript에서 typeof 연산자의 잘못된 사용례를 알아봅니다.</summary></entry></feed>
