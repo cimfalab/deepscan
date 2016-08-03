@@ -38,13 +38,13 @@ if (boardId != null || boardId != "") {
 
 비슷한 사례를 하나 더 보죠.
 
-```javascript
+{% prism javascript numbering=66 highlight="2" %}
   validateInteger : function(str, min, max) {
     if (str==null || str==undefined || (str + "").trim().length < 1) {
       return Em.I18n.t('number.validate.empty');
-    }
-```
--- Source: Apache Ambari `/app/utils/number_utils.js`
+    } else {
+{% endprism %}
+-- Source: Apache Ambari 2.2.2 `/app/utils/number_utils.js`
 {: .right}
 
 위 코드에서는 `str==undefined`가 항상 거짓이 되는데, 그 이유는 `str`이 `undefined`일 경우 선행 조건 `str==null`에 의해 체크되기 때문입니다. 선행 조건에서 `undefined==null`이 참인 이유는 == 연산자가 타입 체크 없이 비교를 하기 때문이구요. 따라서 `str===null || str===undefined`가 올바른 코드입니다. 헷갈리죠? :)
@@ -66,7 +66,7 @@ if (page <= 0 || page == "" || page === null || typeof page === "undefined") {
 
 아래 코드는 중첩된(nested) if 문에서 중복 조건에 의해 로직이 실행되지 않는 예입니다.
 
-```javascript
+{% prism javascript numbering=863 highlight="3,7" %}
   bulkOperationForHostComponentsDecommissionCallBack: function (operationData, data) {
     ...
     if (turn_off) { // 1)
@@ -79,8 +79,8 @@ if (page <= 0 || page == "" || page === null || typeof page === "undefined") {
         else {
           parameters['excluded_hosts'] = hostsWithComponentInProperState.join(',');
         }
-```
--- Source: Apache Ambari `/app/controllers/main/host.js`
+{% endprism %}
+-- Source: Apache Ambari 2.2.2 `/app/controllers/main/host.js`
 {: .right}
 
 2)의 `turn_off` 체크는 1)의 `else` 블럭 안에 포함되어 있으므로 항상 false입니다.
@@ -110,7 +110,7 @@ if (page <= 0 || page == "" || page === null || typeof page === "undefined") {
 
 ### 값이 변하지 않는 변수 사용
 
-```javascript
+{% prism javascript numbering=384 highlight="4,8" %}
   validate: function () {
     ...
     var isError = false;
@@ -124,8 +124,8 @@ if (page <= 0 || page == "" || page === null || typeof page === "undefined") {
     } else {
       this.set('warn', true);
     }
-```
--- Source: Apache Ambari `/app/models/configs/objects/service_config_property.js`
+{% endprism %}
+-- Source: Apache Ambari 2.2.2 `/app/models/configs/objects/service_config_property.js`
 {: .right}
 
 `isWarn` 변수가 초기값을 그대로 갖기 때문에 `if (!isWarn)`은 항상 true가 되고 `else` 분기는 실행되지 않습니다. 의도한 동작인지 체크할 필요가 있습니다.
@@ -169,16 +169,18 @@ return;
 
 ### 삼항 연산자
 
-```javascript
+{% prism javascript numbering=642 highlight="7" %}
   onErrorPerHost: function (actions, contentHost) {
     if (!actions) return;
-    ...
+    if (actions.someProperty('Tasks.status', 'FAILED') || actions.someProperty('Tasks.status', 'ABORTED') || actions.someProperty('Tasks.status', 'TIMEDOUT')) {
+      contentHost.set('status', 'warning');
+    }
     if ((this.get('content.cluster.status') === 'PENDING' && actions.someProperty('Tasks.status', 'FAILED')) || (this.isMasterFailed(actions))) {
       contentHost.get('status') !== 'heartbeat_lost' ? contentHost.set('status', 'failed') : '';
     }
   },
-```
--- Source: Apache Ambari `/app/controllers/wizard/step9_controller.js`
+{% endprism %}
+-- Source: Apache Ambari 2.2.2 `/app/controllers/wizard/step9_controller.js`
 {: .right}
 
 위 코드 중 삼항 연산자의 `''`가 사용되지 않는 표현식입니다.
