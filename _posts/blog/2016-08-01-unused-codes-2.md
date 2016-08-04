@@ -40,12 +40,11 @@ if (boardId != null || boardId != "") {
 
 비슷한 사례를 하나 더 보죠.
 
-{% prism javascript numbering=66 highlight="2" %}
-  validateInteger : function(str, min, max) {
+<pre class="line-numbers" data-start="66" data-line="2"><code class="language-javascript">  validateInteger : function(str, min, max) {
     if (str==null || str==undefined || (str + "").trim().length < 1) {
       return Em.I18n.t('number.validate.empty');
     } else {
-{% endprism %}
+</code></pre>
 -- Source: Apache Ambari 2.2.2 `/app/utils/number_utils.js`
 {: .right}
 
@@ -68,8 +67,7 @@ if (page <= 0 || page == "" || page === null || typeof page === "undefined") {
 
 아래 코드는 중첩된(nested) if 문에서 중복 조건에 의해 로직이 실행되지 않는 예입니다.
 
-{% prism javascript numbering=863 highlight="3,7" %}
-  bulkOperationForHostComponentsDecommissionCallBack: function (operationData, data) {
+<pre class="line-numbers" data-start="863" data-line="3,7"><code class="language-javascript">  bulkOperationForHostComponentsDecommissionCallBack: function (operationData, data) {
     ...
     if (turn_off) { // 1)
       ...
@@ -81,7 +79,7 @@ if (page <= 0 || page == "" || page === null || typeof page === "undefined") {
         else {
           parameters['excluded_hosts'] = hostsWithComponentInProperState.join(',');
         }
-{% endprism %}
+</code></pre>
 -- Source: Apache Ambari 2.2.2 `/app/controllers/main/host.js`
 {: .right}
 
@@ -112,8 +110,7 @@ if (page <= 0 || page == "" || page === null || typeof page === "undefined") {
 
 ### 값이 변하지 않는 변수 사용
 
-{% prism javascript numbering=384 highlight="4,8" %}
-  validate: function () {
+<pre class="line-numbers" data-start="384" data-line="4,8"><code class="language-javascript">  validate: function () {
     ...
     var isError = false;
     var isWarn = false;
@@ -126,7 +123,7 @@ if (page <= 0 || page == "" || page === null || typeof page === "undefined") {
     } else {
       this.set('warn', true);
     }
-{% endprism %}
+</code></pre>
 -- Source: Apache Ambari 2.2.2 `/app/models/configs/objects/service_config_property.js`
 {: .right}
 
@@ -171,8 +168,7 @@ return;
 
 ### 삼항 연산자
 
-{% prism javascript numbering=642 highlight="7" %}
-  onErrorPerHost: function (actions, contentHost) {
+<pre class="line-numbers" data-start="642" data-line="7"><code class="language-javascript">  onErrorPerHost: function (actions, contentHost) {
     if (!actions) return;
     if (actions.someProperty('Tasks.status', 'FAILED') || actions.someProperty('Tasks.status', 'ABORTED') || actions.someProperty('Tasks.status', 'TIMEDOUT')) {
       contentHost.set('status', 'warning');
@@ -181,7 +177,7 @@ return;
       contentHost.get('status') !== 'heartbeat_lost' ? contentHost.set('status', 'failed') : '';
     }
   },
-{% endprism %}
+</code></pre>
 -- Source: Apache Ambari 2.2.2 `/app/controllers/wizard/step9_controller.js`
 {: .right}
 
