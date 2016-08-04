@@ -1,99 +1,25 @@
+---
+sitemap: false
+---
+
 [
-
-  
-    {
-      "title"			: "사용되지 않는 코드 (2)",
-      "link"			: "https://cimfalab.github.io/deepscan/2016/08/unused-codes-2",
-      "excerpt"		: "JavaScript에서의 중복 조건, 사용되지 않는 표현식 등 사용되지 않는 코드의 사례에 대해 알아봅니다.  [Tags] JavaScript, 중복 조건, 동일 결과 조건, 사용되지 않는 표현식, and 사용되지 않는 코드"
+{% for post in site.posts %}
+  {% if post.title != null and post.title != empty and post.search_omit != true %}
+    {% if forloop.index > 1 %},{% endif %}{
+      "title"			: {{ post.title | jsonify }},
+      "link"			: "{{ site.url }}{{ post.url }}",
+      "excerpt"		: "{{ post.excerpt | markdownify | strip_html | strip_newlines | escape_once | remove: '\[' | remove: '\]' | remove: '\(' | remove: '\)' }}  [Tags] {{ post.tags | array_to_sentence_string }}"
     }
-  
+  {% endif %}
+{% endfor %}
 
-  
-    ,{
-      "title"			: "사용되지 않는 코드 (1)",
-      "link"			: "https://cimfalab.github.io/deepscan/2016/07/unused-codes-1",
-      "excerpt"		: "JavaScript에서의 중복 속성 정의, 불필요한 인자 전달 등 사용되지 않는 코드에 대해 알아봅니다.  [Tags] JavaScript, 중복 함수, 중복 속성, 불필요한 인자, 사용되지 않는 코드, and unused codes"
+{% for page in site.pages %}
+  {% if page.layout != 'none' and page.layout != 'none' and page.title != null and page.title != empty and page.search_omit != true %}
+    {% if forloop.index > 1 %},{% endif %}{
+      "title"			: {{ page.title | jsonify }},
+      "link"			: "{{ site.url }}{{ page.url | replace: 'index.html', '' }}",
+      "excerpt"		: "{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}"
     }
-  
-
-  
-    ,{
-      "title"			: "ECMAScript 6 소개",
-      "link"			: "https://cimfalab.github.io/deepscan/2016/07/ecmascript-6",
-      "excerpt"		: "새롭게 확정된 JavaScript 명세인 ECMAScript 6의 새로운 기능들을 소개합니다.  [Tags] JavaScript, ECMAScript 6, and ES6"
-    }
-  
-
-  
-    ,{
-      "title"			: "JavaScript에서 변수 사용 시 주의할 점",
-      "link"			: "https://cimfalab.github.io/deepscan/2016/07/variable-misuse",
-      "excerpt"		: "JavaScript에서 변수 사용 시 중복 선언, 재정의, 선언 전 사용 등의 주의할 점을 알아봅니다.  [Tags] JavaScript, 변수, variable, 호이스팅, and hoisting"
-    }
-  
-
-  
-    ,{
-      "title"			: "Firefox에서 이벤트 객체 제대로 사용하기",
-      "link"			: "https://cimfalab.github.io/deepscan/2016/07/event-in-firefox",
-      "excerpt"		: "[브라우저 호환성] Firefox에서 흔히 잘못 사용하는 이벤트 객체의 사례를 공유하고, 제대로 사용하는 방법을 알아봅니다.  [Tags] JavaScript, Firefox, 이벤트, Event, 브라우저 호환성, and browser compatibility"
-    }
-  
-
-  
-    ,{
-      "title"			: "typeof 연산자의 잘못된 사용",
-      "link"			: "https://cimfalab.github.io/deepscan/2016/07/typeof",
-      "excerpt"		: "JavaScript에서 typeof 연산자의 잘못된 사용례를 알아봅니다.  [Tags] JavaScript and typeof"
-    }
-  
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-    ,{
-      "title"			: "Articles",
-      "link"			: "https://cimfalab.github.io/deepscan/articles/",
-      "excerpt"		: "JavaScript 관련 유용한 글 모음"
-    }
-  
-
-  
-
-  
-
-  
-    ,{
-      "title"			: "Theme Setup",
-      "link"			: "https://cimfalab.github.io/deepscan/theme-setup/",
-      "excerpt"		: "Instructions on how to install and customize the Jekyll theme So Simple."
-    }
-  
-
-  
-    ,{
-      "title"			: "소개",
-      "link"			: "https://cimfalab.github.io/deepscan/about/",
-      "excerpt"		: "To help you write better JavaScript codes by static analysis technology"
-    }
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+  {%endif%}
+{% endfor %}
 ]
