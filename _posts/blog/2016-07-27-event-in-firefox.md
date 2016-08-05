@@ -3,6 +3,7 @@ layout: post
 title: Firefox에서 이벤트 객체 제대로 사용하기
 excerpt: "[브라우저 호환성] Firefox에서 흔히 잘못 사용하는 이벤트 객체의 사례를 공유하고, 제대로 사용하는 방법을 알아봅니다."
 date: 2016-07-27 10:25:00 +0900
+modified: 2016-08-05 15:00:00 +0900
 share: true
 categories: blog
 tags:
@@ -111,7 +112,7 @@ function eventUtil_blockBackspace_onkeydown() {
 
 하지만 [Firefox는 해당 속성을 지원하지 않기 때문에](https://developer.mozilla.org/en-US/docs/Web/API/Event/srcElement) 에러가 발생하고 로직이 수행되지 않습니다.
 
-따라서 다음과 같이 **`Event.target` 속성을 함께 사용**해야 모든 브라우저에 대한 대응이 가능합니다. (Internet Explorer 8은 또 `target`만 지원하거든요. [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Event/target)을 참고하세요.)
+따라서 다음과 같이 **`Event.target` 속성을 함께 사용**해야 모든 브라우저에 대한 대응이 가능합니다. Internet Explorer 8은 또 `srcElement`만 [지원](https://developer.mozilla.org/en-US/docs/Web/API/Event/target)하기 때문에요.
 
 ```javascript
 function eventUtil_blockBackspace_onkeydown(e) {
