@@ -8,6 +8,8 @@ categories: articles
 tags:
 - JavaScript
 - Intel HTML5 Web Apps
+- Wordswarm
+- Counting Beads
 - 오픈 소스
 - 코드 오류
 related:
@@ -145,9 +147,9 @@ DOM 조작, CSS 애니메이션 같은 기술로 구현했고 게임 설정 저�
   }
 ```
 
-## Counting beads
+## Counting Beads
 
-[Counting beads](https://01.org/html5webapps/online/counting-beads/)는 과일 개수를 맞추는 게임입니다.
+[Counting Beads](https://01.org/html5webapps/online/counting-beads/)는 과일 개수를 맞추는 게임입니다.
 DOM 조작과 jQuery 애니메이션 같은 기술로 구현되어 있습니다.
 
 ![](https://01.org/sites/default/files/styles/webapp_screenshots/public/webapps/counting-beads-screenshot2.png?itok=OeL3m220)
