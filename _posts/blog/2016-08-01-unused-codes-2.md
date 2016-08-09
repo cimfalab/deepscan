@@ -7,6 +7,8 @@ share: true
 categories: blog
 tags:
 - JavaScript
+- JavaScript 정적 분석
+- JavaScript static analysis
 - 중복 조건
 - 동일 결과 조건
 - 사용되지 않는 표현식

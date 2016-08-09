@@ -7,6 +7,8 @@ share: true
 categories: blog
 tags:
 - JavaScript
+- JavaScript 정적 분석
+- JavaScript static analysis
 - 변수
 - variable
 - 호이스팅

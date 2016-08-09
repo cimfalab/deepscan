@@ -2,10 +2,13 @@
 layout: post
 title: 조건 체크 및 코드 실행
 excerpt: "if/else 문, switch 문에서의 조건 체크 및 코드 실행에 대해 알아봅니다."
+date: 2016-08-09 19:00:00 +0900
 share: true
 categories: blog
 tags:
 - JavaScript
+- JavaScript 정적 분석
+- JavaScript static analysis
 - 중복 함수
 - 중복 속성
 - 불필요한 인자

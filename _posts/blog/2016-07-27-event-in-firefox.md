@@ -8,6 +8,8 @@ share: true
 categories: blog
 tags:
 - JavaScript
+- JavaScript 정적 분석
+- JavaScript static analysis
 - Firefox
 - 이벤트
 - Event

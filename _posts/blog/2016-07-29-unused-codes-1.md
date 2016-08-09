@@ -7,6 +7,8 @@ share: true
 categories: blog
 tags:
 - JavaScript
+- JavaScript 정적 분석
+- JavaScript static analysis
 - 중복 함수
 - 중복 속성
 - 불필요한 인자
