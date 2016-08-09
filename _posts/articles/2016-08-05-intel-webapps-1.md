@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "오픈 소스 검증 사례 - Intel HTML5 Web Apps"
+title: "오픈 소스 검증 사례 - Intel HTML5 Web Apps (1)"
 excerpt: "Intel의 오픈 소스 프로젝트인 HTML5 Web Apps에서 발견된 코드 오류를 통해 잘못된 JavaScript 코딩 사례를 알아봅니다."
 date: 2016-08-05 15:00:00 +0900
 share: true
 categories: articles
 tags:
 - JavaScript
+- JavaScript 정적 분석
+- JavaScript static analysis
 - Intel HTML5 Web Apps
 - Wordswarm
 - Counting Beads
@@ -246,5 +248,5 @@ Internet Explorer 8 지원을 위해서는 `var target = event.target || event.s
 
 ## Wrap-Up
 
-Intel의 오픈 소스 프로젝트 Intel이 진행했던 HTML5 Web Apps 중 2개 샘플에 대한 코드 오류를 살펴보았습니다.
+Intel의 오픈 소스 프로젝트 HTML5 Web Apps 중 2개 샘플에 대한 코드 오류를 살펴보았습니다.
 이후에도 오픈 소스 프로젝트의 코드 오류에 대한 내용을 계속 공유하겠습니다.
