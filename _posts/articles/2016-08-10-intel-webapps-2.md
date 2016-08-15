@@ -3,6 +3,7 @@ layout: post
 title: "오픈 소스 검증 사례 - Intel HTML5 Web Apps (2)"
 excerpt: "Intel의 오픈 소스 프로젝트인 HTML5 Web Apps에서 발견된 코드 오류를 통해 잘못된 JavaScript 코딩 사례를 알아봅니다."
 date: 2016-08-10 21:00:00 +0900
+modified: 2016-08-15 15:00:00 +0900
 share: true
 categories: articles
 tags:
@@ -64,8 +65,7 @@ DOM 조작과 JavaScript로 구현된 AI 엔진을 사용하고 있습니다.
 
 아래 코드는 `hasOwnProperty` 체크가 필요한 상황을 보여줍니다.
 
-```javascript
-Array.prototype.contains = function(value) {
+<pre class="line-numbers"><code class="language-javascript">Array.prototype.contains = function(value) {
     for (var key in this) {
         if (this[key] === value) {
             return true;
@@ -78,7 +78,7 @@ var arr = [1, 2];
 for (var i in arr) {
     console.log(i);
 }
-```
+</code></pre>
 
 for-in loop는 객체가 갖고 있는 prototype 객체의 속성들(위 코드의 경우 `contains` 함수)까지 포함하기 때문에 출력 결과가 다음과 같습니다.
 
@@ -89,14 +89,24 @@ contains
 ```
 
 인덱스 0, 1 외에 contains가 포함되는 것을 볼 수 있습니다. 배열의 실제 값인 1, 2가 아닌 인덱스가 나온다는 것도 혼동하기 쉬운 부분이죠.
-따라서 해당 속성이 객체에 직접적으로 존재하는지 체크할 필요가 있습니다.
 
-```javascript
-for (var i in arr) {
+따라서 해당 속성이 객체에 직접적으로 존재하는지 `hasOwnProperty`를 통해 체크할 필요가 있습니다.
+
+<pre class="line-numbers" data-start="11" data-line="2"><code class="language-javascript">for (var i in arr) {
     if (arr.hasOwnProperty(i))
         console.log(arr[i]);
 }
+</code></pre>
+
+참고로, ECMAScript 6에 새로 추가된 for-of는 객체 속성만 순회하면서 값을 반환하기 때문에 배열의 값인 1과 2가 바로 출력됩니다.
+
+```javascript
+for (var i of arr) {
+    console.log(i);
+}
 ```
+
+ECMAScript 6에 대해서는 [ECMAScript 6 소개]({{ site.baseurl }}{% post_url 2016-07-28-ecmascript-6 %}) 포스팅을 참고하세요.
 
 ### AJAX 콜백 함수에서의 return
 **js/annex.js:** 'return ret' of Asynchronous Callback $.getJSON("_locales/en/messages.json", function (data) { ... }).error has no effect.
