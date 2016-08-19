@@ -17,12 +17,12 @@ related:
 - 사용되지 않는 코드 (1)
 ---
 
-* Table of Contents
-{:toc}
-
 어느새 다섯 번째 시간이네요^^
 
 지난 [포스팅]({{ site.baseurl }}{% post_url 2016-07-29-unused-codes-1 %})에 이어 사용되지 않는 코드에 대한 얘기를 해보겠습니다.
+
+* Table of Contents
+{:toc}
 
 ## 중복 조건
 

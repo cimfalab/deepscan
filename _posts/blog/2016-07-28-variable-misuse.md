@@ -15,14 +15,14 @@ tags:
 - hoisting
 ---
 
-* Table of Contents
-{:toc}
-
 세 번째 시간입니다. 오늘은 JavaScript 변수에 관해 알아보겠습니다.
 
 JavaScript는 다른 언어와 다르게 변수 범위가 블럭이 아닌 함수 단위이고, 호이스팅 특성 때문에 변수 사용 시 특히 주의가 요구됩니다.
 
 오늘은 검출된 사례 중 잘못된 변수 사용에 대해 공유하겠습니다.
+
+* Table of Contents
+{:toc}
 
 ## 변수 선언 전 사용
 

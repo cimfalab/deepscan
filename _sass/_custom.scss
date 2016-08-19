@@ -102,3 +102,23 @@ th {
   font-size: 1rem;
   margin-bottom: 0;
 }
+
+// TOC
+#markdown-toc::before {
+  content: "Contents";
+  font-weight: bold;
+}
+
+#markdown-toc {
+  border: 1px solid #aaa;
+  padding: 1em;
+  display: inline-block;
+}
+
+#markdown-toc ul {
+  padding-left: 40px;
+}
+
+#markdown-toc li {
+  border-bottom: none;
+}

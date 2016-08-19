@@ -15,12 +15,12 @@ tags:
 - 사용되지 않는 코드
 ---
 
-* Table of Contents
-{:toc}
-
 여섯 번째 시간입니다.
 
 지난 [포스팅]({{ site.baseurl }}{% post_url 2016-08-01-unused-codes-2 %})에서 살펴본 중복 조건과 동일 결과 조건에 이어 오늘은 if/else 문과 switch 문에서의 조건 체크 및 코드 실행에 대해 정리합니다.
+
+* Table of Contents
+{:toc}
 
 ## 조건문의 실행 코드 동일
 

@@ -17,9 +17,6 @@ tags:
 - browser compatibility
 ---
 
-* Table of Contents
-{:toc}
-
 두 번째 시간에서는 브라우저 호환성에 관해 알아보겠습니다.
 
 브라우저 호환성이란 Internet Explorer, Chrome, Firefox 등 다양한 브라우저에서 웹 사이트가 정상적으로 동작하는지에 대한 체크입니다.
@@ -29,6 +26,9 @@ tags:
 하지만 제가 개발 중인 솔루션에서는 JavaScript 정적 분석과 브라우저 호환성 데이터베이스를 통해 소스 레벨에서 브라우저 호환 여부를 자동 체크할 수 있습니다.
 
 오늘은 검출된 사례 중 Firefox에서 흔히 잘못 사용하는 이벤트 객체를 공유하고 제대로 사용하는 방법을 알아보겠습니다.
+
+* Table of Contents
+{:toc}
 
 ## 글로벌 event 객체 사용
 
