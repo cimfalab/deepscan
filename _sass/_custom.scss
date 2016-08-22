@@ -65,6 +65,19 @@ li {
 	}
 }
 
+$custom-link-color: #308bd8;
+
+.entry-content {
+  p > a,
+	li > a {
+		color: $custom-link-color;
+		border-bottom: 1px dotted lighten($custom-link-color, 20);
+		&:hover {
+			border-bottom-style: solid;
+		}
+	}
+}
+
 .post-list .excerpt {
   padding: 4px 0;
 }
@@ -103,7 +116,7 @@ th {
   margin-bottom: 0;
 }
 
-// TOC
+/* TOC */
 #markdown-toc::before {
   content: "Contents";
   font-weight: bold;
@@ -121,4 +134,62 @@ th {
 
 #markdown-toc li {
   border-bottom: none;
+}
+
+/* Image with caption */
+.image-wrapper {
+  text-align: center;
+
+  img {
+    margin: 0 auto;
+  }
+
+  .image-caption {
+    color: #757575;
+    margin-top: 6px;
+    font-size: 1rem;
+  }
+}
+
+table.compare td {
+  vertical-align: top;
+  border-bottom: none;
+  border-top: none;
+}
+table.compare td:nth-child(odd) {
+  border-left: none;
+}
+table.compare td:nth-child(even),
+table.compare td[colspan="2"] {
+  border-right: none;
+}
+
+$reviewer-color: #c00000;
+
+.quotes {
+  border-left-color: #bbb;
+  margin: 0em 20px;
+  padding: 0.4em 10px;
+  quotes: "\201C""\201D";
+
+  &:before {
+    color: #bbb;
+    content: open-quote;
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.15em;
+    vertical-align: -0.4em;
+  }
+
+  p {
+    display: inline;
+  }
+}
+.quotes.reviewer {
+  border-left-color: $reviewer-color;
+  color: $reviewer-color;
+
+  &:before {
+    color: $reviewer-color;
+  }
 }
