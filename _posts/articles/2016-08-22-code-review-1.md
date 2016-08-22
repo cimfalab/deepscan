@@ -38,7 +38,7 @@ tags:
 
 최근에 읽은 \<스페이스 크로니클\>이란 책에서는 문화란 어떤 집단이 더는 관심을 두지 않는 일을 행하는 것이라고 합니다. 즉 **'누구나 당연하게 생각하는 것'**이죠.
 
-![](/assets/images/code-review-00.jpg)
+![]({{ site.baseurl }}/assets/images/code-review-00.jpg)
 
 예를 들어 이탈리아의 슈퍼마켓에 가면 파스타 코너가 굉장히 다양하고 커서 여행객들이 놀라는데 막상 현지인들의 반응은 이렇다네요.
 
@@ -105,7 +105,7 @@ tags:
 제 장점은 뭐였을까요?
 저는 아무래도 제품 관리의 역할이 있다 보니 UI나 사용자에게 보이는 레이블, 에러 메시지에 대해 주로 리뷰했었습니다. [에러 메시지는 4H를 담고 있어야](http://story.pxd.co.kr/1128) 하는데 이건 그냥 구색만 맞춘 개발자 영어잖아요!
 
-![](/assets/images/code-review-07.png)
+![]({{ site.baseurl }}/assets/images/code-review-07.png)
 
 ### 조직은 개발자의 성장을 바란다
 개발자의 성장도 코드 리뷰나 페어 프로그래밍(pair programming)의 효과 중 하나인 것 같습니다.
@@ -179,11 +179,11 @@ tags:
 
 [httpbin.org](http://httpbin.org)나 [RequestBin](https://requestb.in/)과 같이 웹 서버를 따로 구동하지 않아도 HTTP 클라이언트의 테스트가 가능한 서비스:
 
-![](/assets/images/code-review-08.png)
+![]({{ site.baseurl }}/assets/images/code-review-08.png)
 
 [JSFiddle](http://jsfiddle.net)이나 [Plunker](https://plnkr.co/)와 같이 HTML/CSS/JavaScript 코드를 실행할 수 있는 서비스:
 
-![](/assets/images/code-review-09.png)
+![]({{ site.baseurl }}/assets/images/code-review-09.png)
 
 ### 도구 선정
 코드 리뷰를 위한 도구나 서비스는 매우 다양합니다.
@@ -302,9 +302,9 @@ tags:
 * 코드 수정에 대한 최종 결정은 리뷰 요청자가 한다.
 * 리뷰 요청자는 커밋 코드의 동작을 본인 로컬 환경이나 개발 서버에서 확인한 후 Verified 점수 1점을 주는 것이 좋다. 패치 셋(patch set)을 올리다 보면 개발자가 확인하지 않는 경우도 많고 컴파일 에러가 없는 JavaScript 특성상 오류를 알기가 어렵더군요.
 
-![](/assets/images/code-review-12.png)
+![]({{ site.baseurl }}/assets/images/code-review-12.png)
 
-![](/assets/images/code-review-13.png)
+![]({{ site.baseurl }}/assets/images/code-review-13.png)
 
 또, 모듈별 단위 테스트에 실패하면 리뷰하지 않는다 혹은 단위 테스트가 같이 올라오지 않으면 리뷰하지 않는다는 규칙을 세울 수 있습니다. 해보고 싶었는데 빡빡한 일정을 이유로 실행하지 못했었네요.
 
@@ -313,12 +313,12 @@ tags:
 
 * 리뷰어는 코드 내용이 잘 이해되지 않을 때 리뷰 요청자에게 찾아가 코드에 대한 설명을 듣는다. 이후 개발자가 이 설명을 주석으로 추가해 패치 셋을 올리는 것이 향후 유지보수에 도움이 된다.
 
-  * ![](/assets/images/code-review-15.png)
-  * ![](/assets/images/code-review-16.png)
+  * ![]({{ site.baseurl }}/assets/images/code-review-15.png)
+  * ![]({{ site.baseurl }}/assets/images/code-review-16.png)
 
 * 주석 처리할 때는 TODO, FIXME 같은 레이블을 추가하는 게 좋다.
 
-  * ![](/assets/images/code-review-14.png)
+  * ![]({{ site.baseurl }}/assets/images/code-review-14.png)
 
 ### 컨벤션 체크
 
@@ -328,7 +328,7 @@ tags:
 
 * 명확히 수립된 컨벤션이 팀 내에 전파되지 않음
 
-* 컨벤션에 없는 스타일에 대한 지적은 [매우 민감](/assets/images/code-review-17.jpg)한 문제. 가이드에 있다면 따라야 하지만, 그렇지 않은 경우는 개발자마다 스타일이 다르므로 코멘트하지 않는 게 좋습니다. 정 스타일을 용납(?)할 수 없으면 공론화해서 가이드에 포함해야 합니다. Promise-then의 indentation이 굉장히 민감하게 대두한 기억이 나네요^^;
+* 컨벤션에 없는 스타일에 대한 지적은 [매우 민감]({{ site.baseurl }}/assets/images/code-review-17.jpg)한 문제. 가이드에 있다면 따라야 하지만, 그렇지 않은 경우는 개발자마다 스타일이 다르므로 코멘트하지 않는 게 좋습니다. 정 스타일을 용납(?)할 수 없으면 공론화해서 가이드에 포함해야 합니다. Promise-then의 indentation이 굉장히 민감하게 대두한 기억이 나네요^^;
 
 <table class="compare">
 <tr><th>개행으로 이어지는 코드는 가이드에 따라 8칸 띄운다!</th><th>Promise-then은 로직이 연결되므로 해당 로직의 블록에 맞춘다!</th></tr>
