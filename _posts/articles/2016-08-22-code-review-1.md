@@ -3,6 +3,7 @@ layout: post
 title: JavaScript 코드 리뷰 - 코드 리뷰 문화
 excerpt: "코드 리뷰 문화에 관해 설명하고 JavaScript 코드의 실제 리뷰 사례를 통해 좋은 JavaScript 코드에 대해 알아봅니다."
 date: 2016-08-22 19:00:00 +0900
+modified: 2016-09-01 19:00:00 +0900
 share: true
 categories: articles
 tags:
@@ -10,6 +11,8 @@ tags:
 - Code Review
 - 코드 리뷰
 - Gerrit
+related:
+- JavaScript 코드 리뷰 - 코드 리뷰 사례로 알아보는 좋은 JavaScript 코드
 ---
 
 여러분의 팀에서는 코드 리뷰(code review)를 하시나요?
@@ -271,7 +274,7 @@ tags:
 * 리뷰 마스터(최종 점수를 주고 머지할 수 있는 사람)를 정한다.
 * 리뷰 코멘트에 대한 최종 수정 결정은 요청자가 한다.
 * 나는 **언제든 리뷰어이거나 리뷰 요청자가 될 수 있으므로 상대방 관점에서 생각**하자.
-  * 리뷰 요청자: 리뷰어가 쉽게 리뷰할 수 있도록 [작은 커밋을 올리려고 노력](#section-11)한다. 리뷰 요청 전에 리뷰 시스템에서 자신이 커밋한 코드의 diff를 확인한다. 자신의 에디터에서는 보이지 않았던 문제(가령 불필요한 공백 추가, require 순서)가 보일 것이다.
+  * 리뷰 요청자: 리뷰어가 쉽게 리뷰할 수 있도록 [작은 커밋을 올리려고 노력](#section-11)한다. 리뷰 요청 전에 리뷰 시스템에서 자신이 커밋한 코드의 diff를 확인한다. 자신의 에디터에서는 보이지 않았던 문제- 가령 불필요한 공백 추가, 모듈의 require 순서, `if (true)` 같이 테스트를 위해 임의로 삽입한 코드 등 -가 보일 것이다.
   * 리뷰어: 리뷰 요청자가 변경한 부분에 대해서만 리뷰하고 무리한 강요를 하지 않는다.
 
   **리뷰어의 의도 표시**<br>
@@ -319,6 +322,24 @@ tags:
 * 주석 처리할 때는 TODO, FIXME 같은 레이블을 추가하는 게 좋다.
 
   * ![]({{ site.baseurl }}/assets/images/code-review-14.png)
+
+* 외부에서 가져온 오픈 소스를 수정할 때는 버그에 관계된 것만 고친다.
+
+  버그 수정을 위해 외부에서 가져온(upstream) 오픈 소스를 고칠 때는 해당 버그에 관계된 부분만 고치는 것이 좋습니다.
+  간혹 버그와 관계없는 수정을 하는 경우(포맷 맞추기)가 있는데, 커밋과도 관계가 없고 오픈 소스에 패치를 보낼 때도 문제 될 수 있으므로 지양해야 합니다.
+
+  <blockquote class="quotes reviewer">
+    <p>버그 fix와 관계된 것이 아니라면 굳이 포맷팅/jshint 등을 위해서 원 upstream과 다르게 수정할 필요는 없을 것 같네요.</p>
+  </blockquote>
+  <blockquote class="quotes">
+    <p>기왕 한 거 다시 돌리기도 그렇네요. 큰 문제 없을 것으로 보입니다.</p>
+  </blockquote>
+  <blockquote class="quotes reviewer">
+    <p>jshint는 무시하시고, bugfix와 관련 없는 코드는 수고스럽더라도 되돌려놓는 게 좋겠습니다. upstream에 bug patch를 보낼 때도 문제가 될 것입니다.</p>
+  </blockquote>
+  <blockquote class="quotes">
+    <p>Done</p>
+  </blockquote>
 
 ### 컨벤션 체크
 

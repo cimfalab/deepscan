@@ -177,7 +177,7 @@ $reviewer-color: #c00000;
     content: open-quote;
     font-size: 3em;
     line-height: 0.1em;
-    margin-right: 0.15em;
+    margin-right: 0.1em;
     vertical-align: -0.4em;
   }
 
@@ -192,4 +192,8 @@ $reviewer-color: #c00000;
   &:before {
     color: $reviewer-color;
   }
+}
+.quotes pre {
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
