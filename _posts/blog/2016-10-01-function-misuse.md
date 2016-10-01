@@ -27,7 +27,7 @@ JavaScript는 동적 타입이면서 함수로의 인자 전달이 유연하기 
 
 Java에서는 함수를 중복 정의하면 에러가 발생합니다.
 
-![Duplicate method in Java](/assets/images/duplicate-method-in-java.png)
+![Duplicate method in Java]({{ site.baseurl }}/assets/images/duplicate-method-in-java.png)
 
 하지만 JavaScript에서는 함수를 중복으로 정의해도 에러가 발생하지 않고 대신 마지막 함수만 유효하게 사용됩니다.
 이에 대한 사례는 [사용되지 않는 코드]({{ site.baseurl }}{% post_url 2016-07-29-unused-codes-1 %})를 참고하세요.
